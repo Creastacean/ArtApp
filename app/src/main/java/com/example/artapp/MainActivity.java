@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
         //I like this comment better, so i deleted the first one :)
         //here' another comment
         //you guys are ridiculous
+        //Don't make fun of me! YOu're not my mom!!
     }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ArtApp</string>
+    <string name="input_description">Describe</string>
+    <string name="input_price">Asking Price/offer</string>
+    <string name="input_tags">Tags (paint, nature, impressionist)</string>
+    <string name="save_post">Post</string>
 </resources>

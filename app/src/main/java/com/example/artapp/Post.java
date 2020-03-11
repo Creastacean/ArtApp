@@ -1,5 +1,7 @@
 package com.example.artapp;
 
+import java.util.Objects;
+
 public class Post {
     int userID;
     String tags;
@@ -12,6 +14,23 @@ public class Post {
         tags = "null";
         timeStamp = -1;
         userID = -1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
+        return userID == post.userID &&
+                timeStamp == post.timeStamp &&
+                tags.equals(post.tags) &&
+                message.equals(post.message) &&
+                image.equals(post.image);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userID, tags, timeStamp, message, image);
     }
 
     public int getUserID() {

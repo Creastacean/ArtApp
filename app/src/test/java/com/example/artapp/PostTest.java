@@ -32,10 +32,40 @@ public class PostTest {
             //simple tests of everything is happy and works
             //NOW WE DO SOME WEIRD STUFF
             //test default constructor, using equals.
+
         }
         catch (Exception e) {
             assertTrue(false);
         }
     }
+
+    @Test
+    public void testEquals() {
+        try{
+            Field pic = Post.class.getDeclaredField("image");
+            pic.setAccessible(true);
+            Field mess = Post.class.getDeclaredField("message");
+            mess.setAccessible(true);
+            Field tag = Post.class.getDeclaredField("tags");
+            tag.setAccessible(true);
+            Field time = Post.class.getDeclaredField("timeStamp");
+            time.setAccessible(true);
+            Field name = Post.class.getDeclaredField("userID");
+            name.setAccessible(true);
+
+            Post post = new Post();
+
+            assertEquals(post, post);
+            assertFalse(post.equals(null));
+            Post other = new Post();
+            mess.set(post, "hello");
+            mess.set(other, "hello");
+            assertEquals(post, other);
+        }
+        catch (Exception e){
+            assertTrue(false);
+        }
+    }
+
     //maybe test handling a picture, we don't know how to do that yet...
 }

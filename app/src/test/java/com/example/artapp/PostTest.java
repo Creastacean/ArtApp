@@ -24,9 +24,9 @@ public class PostTest {
             Post post = new Post();
             //make every other test using various asserts and such.
 
-            assertEquals(post.getImage(), null);
+            assertEquals(post.getImage(), "null");
             assertEquals(post.getMessage(), "blank");
-            assertEquals(post.getTags(), null);
+            assertEquals(post.getTags(), "null");
             assertEquals(post.getTimeStamp(), -1);
             assertEquals(post.getUserID(), -1);
             //simple tests of everything is happy and works

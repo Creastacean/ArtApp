@@ -4,4 +4,8 @@
     <string name="input_price">Asking Price/offer</string>
     <string name="input_tags">Tags (paint, nature, impressionist)</string>
     <string name="save_post">Post</string>
+    <string name="settings_button">Settings</string>
+    <string name="profile_button">Profile</string>
+    <string name="feed_button">Feed</string>
+    <string name="post_button">Post</string>
 </resources>

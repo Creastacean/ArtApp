@@ -8,12 +8,15 @@ public class Post {
     int timeStamp;
     String message;
     String image;
+    String priceOrOffer;
+
     public Post() {
         image = "null";
         message = "blank";
         tags = "null";
         timeStamp = -1;
         userID = -1;
+        priceOrOffer = "";
     }
 
     @Override
@@ -32,7 +35,6 @@ public class Post {
     public int hashCode() {
         return Objects.hash(userID, tags, timeStamp, message, image);
     }
-
     public int getUserID() {
         return userID;
     }
@@ -44,7 +46,6 @@ public class Post {
     public String getTags() {
         return tags;
     }
-
     public void setTags(String tags) {
         this.tags = tags;
     }
@@ -52,7 +53,6 @@ public class Post {
     public int getTimeStamp() {
         return timeStamp;
     }
-
     public void setTimeStamp(int timeStamp) {
         this.timeStamp = timeStamp;
     }
@@ -60,16 +60,15 @@ public class Post {
     public String getMessage() {
         return message;
     }
-
     public void setMessage(String message) {
-        message = message;
+        this.message = message;
     }
 
     public String getImage() {
         return image;
     }
+    public void setImage(String image) { this.image = image;}
 
-    public void setImage(String image) {
-        image = image;
-    }
+    public String getPriceOrOffer() { return priceOrOffer; }
+    public void setPriceOrOffer(String priceOrOffer) { this.priceOrOffer = priceOrOffer; }
 }

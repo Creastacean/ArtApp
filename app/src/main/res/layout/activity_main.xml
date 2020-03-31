@@ -65,6 +65,7 @@
         android:id="@+id/button5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:onClick="switchToPost"
         android:text="@string/post_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

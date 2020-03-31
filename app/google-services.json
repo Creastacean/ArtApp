@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "948081672098",
+    "firebase_url": "https://artapp-ed0b8.firebaseio.com",
+    "project_id": "artapp-ed0b8",
+    "storage_bucket": "artapp-ed0b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948081672098:android:9ed1b28abc69f31c4abcfb",
+        "android_client_info": {
+          "package_name": "com.example.artapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948081672098-v06gbbt6ls94fjljqqcdquad6nkiju8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.artapp",
+            "certificate_hash": "787fb4fc91a292347e2331110d7fa092390ce2fd"
+          }
+        },
+        {
+          "client_id": "948081672098-o2j349i6bvc52uu7ule7584f6rmcualp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.artapp",
+            "certificate_hash": "a169154f628db2d83411c24a40171a0e501acf0f"
+          }
+        },
+        {
+          "client_id": "948081672098-9lcvh3im4k991tduguu1ce82adu99f9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3qGCUSQi2XTOhQU8GTOstTtd7sa2sW0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948081672098-9lcvh3im4k991tduguu1ce82adu99f9m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

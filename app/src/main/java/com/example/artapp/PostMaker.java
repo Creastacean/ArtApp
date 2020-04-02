@@ -2,6 +2,7 @@ package com.example.artapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +50,9 @@ public class PostMaker extends AppCompatActivity {
         newPost.setPriceOrOffer(price.getText().toString().trim());
 
         database.push().setValue(newPost);
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

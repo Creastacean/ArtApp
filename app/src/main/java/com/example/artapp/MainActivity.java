@@ -16,11 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = getIntent();
         //I like this comment better, so i deleted the first one :)
         //here' another comment
         //you guys are ridiculous
         //Don't make fun of me! YOu're not my mom!!
+
+
     }
 
     /********************************************************************************

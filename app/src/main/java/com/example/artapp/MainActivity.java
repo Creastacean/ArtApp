@@ -30,13 +30,18 @@ public class MainActivity extends AppCompatActivity {
         //here' another comment
         //you guys are ridiculous
         //Don't make fun of me! YOu're not my mom!!
-
         final String message = "no posts";
         database = FirebaseDatabase.getInstance().getReference().child("Post");
         ValueEventListener listener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String Desc = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("message").getValue(String.class);
+                String Tags = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("tags").getValue(String.class);
+                String Cost = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("priceOrOffer").getValue(String.class);
+                TextView textView = findViewById(R.id.textView5);
 
+                String Total = Desc + ", " + Tags + ", " + Cost;
+                textView.setText(Total);
             }
 
             @Override
@@ -45,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        database.addValueEventListener(ValueEventListener listener);
+        database.addValueEventListener(listener);
 
 
 
@@ -57,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
         //matter of wrapping some of this in an if statement.
         //then in theory i believe the resulting string would also need to be parsed.
         //some of it at least kind of makes sense.
-        TextView textView = findViewById(R.id.textView5); //would need renamed for whatever we call the textbox
-        textView.setText(message);
+         //would need renamed for whatever we call the textbox
+        //textView.setText(message);
 
     }
 

@@ -20,6 +20,7 @@ public class PostMaker extends AppCompatActivity {
     Button postButton;
     Post newPost;
     DatabaseReference database;
+    public static final String EXTRA_THING = "com.example.artapp.POST";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class PostMaker extends AppCompatActivity {
      * SEND POST
      * creates a new post, adds the user input to said post, and then used the database refrence
      * to send it to the firebase realtime database !!!NOT CLOUD FIRESTORE THAT THING IS A NIGHTMARE!!!
+     * lastly we return to the main session
      **************************************************************************************************/
     public void sendPost(View view) {
         //I got rid of this and it still works, I'm just afraid to erase it still
@@ -52,6 +54,18 @@ public class PostMaker extends AppCompatActivity {
         database.push().setValue(newPost);
 
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
+        EditText message = (EditText) findViewById(R.id.postDescription);
+        EditText tags = (EditText) findViewById(R.id.postTags);
+        EditText cost = (EditText) findViewById(R.id.postAskingPrice);
+        //duplicate that line ^^ for the three attributes, use strings, and make one large string with all of it, called message
+        String description = message.getText().toString();
+        String points = tags.getText().toString();
+        String money = cost.getText().toString();
+        String sender = description + ", " + points + ", " + money;
+
+        intent.putExtra(EXTRA_THING, sender);
         startActivity(intent);
     }
 }

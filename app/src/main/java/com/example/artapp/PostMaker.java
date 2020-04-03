@@ -54,7 +54,7 @@ public class PostMaker extends AppCompatActivity {
         database.push().setValue(newPost);
 
         Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        //startActivity(intent);
 
         EditText message = (EditText) findViewById(R.id.postDescription);
         EditText tags = (EditText) findViewById(R.id.postTags);

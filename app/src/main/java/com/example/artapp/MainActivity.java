@@ -13,7 +13,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Collections;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,36 +36,37 @@ public class MainActivity extends AppCompatActivity {
         //you guys are ridiculous
         //Don't make fun of me! YOu're not my mom!!
         final String message = "no posts";
-        database = FirebaseDatabase.getInstance().getReference().child("Post");
-        ValueEventListener listener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String Desc = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("message").getValue(String.class);
-                String Tags = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("tags").getValue(String.class);
-                String Cost = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("priceOrOffer").getValue(String.class);
-                //TextView textView = findViewById(R.id.textView5);
-                TextView msg = findViewById(R.id.message);
-                TextView tgs = findViewById(R.id.tags);
-                TextView cst = findViewById(R.id.priceOffer);
-                //String Total = Desc + ", " + Tags + ", " + Cost;
-                //textView.setText(Total);
-                msg.setText(Desc);
-                tgs.setText(Tags);
-                cst.setText("$" + Cost);
-            }
+        Intent intent = getIntent();
+        if(intent.getStringExtra(PostMaker.EXTRA_THING) != null) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            final String ID = intent.getStringExtra(PostMaker.EXTRA_THING);
+            database = FirebaseDatabase.getInstance().getReference().child("Post");
+            ValueEventListener listener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-            }
-        };
+                    String Desc = dataSnapshot.child(ID).child("message").getValue(String.class);
+                    String Tags = dataSnapshot.child(ID).child("tags").getValue(String.class);
+                    String Cost = dataSnapshot.child(ID).child("priceOrOffer").getValue(String.class);
+                    TextView msg = findViewById(R.id.message);
+                    TextView tgs = findViewById(R.id.tags);
+                    TextView cst = findViewById(R.id.priceOffer);
+                    msg.setText(Desc);
+                    tgs.setText(Tags);
+                    cst.setText("$" + Cost);
+                }
 
-        database.addValueEventListener(listener);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            };
+
+            database.addValueEventListener(listener);
+
+        }
 
 
-
-        //Intent intent = getIntent();
-        //String message = intent.getStringExtra(PostMaker.EXTRA_THING);
         //I got a string back to the main activity. but i am not sure how to handle the obvious
         //case where we haven't even left the main activity yet, let alone returned.
         //how do we determin that is the case, once that is understood then it should be a simple

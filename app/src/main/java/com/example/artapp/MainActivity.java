@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -38,10 +39,15 @@ public class MainActivity extends AppCompatActivity {
                 String Desc = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("message").getValue(String.class);
                 String Tags = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("tags").getValue(String.class);
                 String Cost = dataSnapshot.child("-M40mspnecmZwFnPMrhB").child("priceOrOffer").getValue(String.class);
-                TextView textView = findViewById(R.id.textView5);
-
-                String Total = Desc + ", " + Tags + ", " + Cost;
-                textView.setText(Total);
+                //TextView textView = findViewById(R.id.textView5);
+                TextView msg = findViewById(R.id.message);
+                TextView tgs = findViewById(R.id.tags);
+                TextView cst = findViewById(R.id.priceOffer);
+                //String Total = Desc + ", " + Tags + ", " + Cost;
+                //textView.setText(Total);
+                msg.setText(Desc);
+                tgs.setText(Tags);
+                cst.setText("$" + Cost);
             }
 
             @Override

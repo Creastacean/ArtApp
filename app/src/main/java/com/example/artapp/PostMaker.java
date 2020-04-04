@@ -46,13 +46,14 @@ public class PostMaker extends AppCompatActivity {
         newPost = new Post();
 
         database = FirebaseDatabase.getInstance().getReference().child("Post");
-        String challengeID = database.push().getKey();
 
         newPost.setMessage(description.getText().toString().trim());
         newPost.setTags(tags.getText().toString().trim());
         newPost.setPriceOrOffer(price.getText().toString().trim());
+        String challengeID = database.push().getKey();
+        System.out.println("Challenge ID: " + challengeID);
 
-        database.push().setValue(newPost);
+        database.child(challengeID).setValue(newPost);
 
         Intent intent = new Intent(this, MainActivity.class);
         //startActivity(intent);

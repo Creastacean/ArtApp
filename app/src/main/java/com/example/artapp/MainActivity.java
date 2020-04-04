@@ -65,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
             database.addValueEventListener(listener);
 
         }
+        else{
+            TextView msg = findViewById(R.id.message);
+            TextView tgs = findViewById(R.id.tags);
+            TextView cst = findViewById(R.id.priceOffer);
+            msg.setText("None");
+            tgs.setText("None");
+            cst.setText("$" + "Cost");
+        }
 
 
         //I got a string back to the main activity. but i am not sure how to handle the obvious

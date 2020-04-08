@@ -75,15 +75,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        //I got a string back to the main activity. but i am not sure how to handle the obvious
-        //case where we haven't even left the main activity yet, let alone returned.
-        //how do we determin that is the case, once that is understood then it should be a simple
-        //matter of wrapping some of this in an if statement.
-        //then in theory i believe the resulting string would also need to be parsed.
-        //some of it at least kind of makes sense.
-         //would need renamed for whatever we call the textbox
-        //textView.setText(message);
-
+        
     }
 
     /********************************************************************************

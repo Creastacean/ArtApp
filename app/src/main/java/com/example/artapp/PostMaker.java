@@ -44,7 +44,7 @@ public class PostMaker extends AppCompatActivity {
         price = (EditText)findViewById(R.id.postAskingPrice);
         postButton = (Button)findViewById(R.id.savePost);
         newPost = new Post();
-
+        //build post to send to database
         database = FirebaseDatabase.getInstance().getReference().child("Post");
 
         newPost.setMessage(description.getText().toString().trim());
@@ -56,17 +56,8 @@ public class PostMaker extends AppCompatActivity {
         database.child(challengeID).setValue(newPost);
 
         Intent intent = new Intent(this, MainActivity.class);
-        //startActivity(intent);
 
-        /*EditText message = (EditText) findViewById(R.id.postDescription);
-        EditText tags = (EditText) findViewById(R.id.postTags);
-        EditText cost = (EditText) findViewById(R.id.postAskingPrice);
-        //duplicate that line ^^ for the three attributes, use strings, and make one large string with all of it, called message
-        String description = message.getText().toString();
-        String points = tags.getText().toString();
-        String money = cost.getText().toString();
-        String sender = description + ", " + points + ", " + money;*/
-
+        //start new activity, prepared to contact database again for information
         intent.putExtra(EXTRA_THING, challengeID);
         startActivity(intent);
     }
